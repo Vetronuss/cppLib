@@ -74,4 +74,37 @@ output: {1,5,2}
 `cout << clamp(10,4,5);` Output: 5
 
 `cout << clamp(4.5,4,5);` Output: 4.5
-### 
+### reverse(array,lenght)
+- reverses an array
+```
+int arr[4] = {1,2,3,4};
+reverse(arr,4);
+print(arr,4);
+```
+output: {4,3,2,1}
+### shuffle
+- shuffles an array
+### toDegrees(num)
+- converts radians to degrees
+### toRadians(num)
+- converts degrees to radians
+### pow(num,exp)
+- raises num to an exponent;
+```cpp
+cout << pow(10,2);
+```
+output: 100
+### sq(num)
+- squares a number
+### insertionSort(arr, length)
+- sorts an array using a insertion sort
+### contains(str, substr)
+- returns true if the substr is present in the string
+```cpp
+string str = "Hello, World!";
+cout << contrains(str,"World");
+```
+output: True
+## Other
+### PI
+- constant double that equals 3.1415926535
