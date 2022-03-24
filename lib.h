@@ -4,11 +4,46 @@
 #include <vector>
 #include <ctime>
 #include <cmath>
+#include <algorithm>
 #include <fstream>
+#include <iterator>
 using namespace std;
 namespace coop{
 
-	
+	const double PI = 3.1415926535;
+
+	template <class t>
+	t toDegrees(t n)
+	{
+		double num = 180/PI;
+		return n*num;
+	}
+
+	template <class t>
+	t toRadians(t n)
+	{
+		double num = PI/180;
+		return n*num;
+	}
+
+	//exponent calc
+	template <class t, class y>
+	t pow(t num1, y num2)
+	{
+		for (int i = 1; i < num2; i++)
+		{
+			num1*=num1;
+		}
+		return num1;
+	}
+
+	//square
+	template <class t>
+	t sq(t num)
+	{
+		return num * num;
+	}
+
 	///generate random double between min and max
 	///dec is decimal precision, default is 2 decimals
 	double randomD(int min, int max, int dec = 2)
@@ -150,6 +185,65 @@ namespace coop{
 		return var;
 	}
 
-	
+	template <class t>
+	void insertionSort(t arr[], int n) 
+	{ 
+    int i, j;
+		t key;
+    for (i = 1; i < n; i++)
+    { 
+        key = arr[i]; 
+        j = i - 1; 
+ 
+        while (j >= 0 && arr[j] > key)
+        { 
+            arr[j + 1] = arr[j]; 
+            j = j - 1; 
+        } 
+        arr[j + 1] = key; 
+    } 
+	} 
 
+	bool contains(string input, string substr)
+	{
+		if (input.find(substr) != string::npos)
+		{
+			return true;
+		}else
+		{
+			return false;
+		}
+	
+	}
+
+	template <class type>
+	void shuffle(type arr[], int length)
+	{
+		vector<type> arr2(arr, arr + length);;
+		vector<type> arr3;
+		for (int i = 0; i < length; i++)
+		{
+			int p = rand() % arr2.size();
+			arr3.push_back(arr2[p]);
+			arr2.erase(arr2.begin()+p);
+		}
+		for (int i = 0; i < arr3.size(); i++)
+		{
+			arr[i] = arr3[i];
+		}
+		
+	}
+
+	template <class t>
+	void reverse(t arr[], int length)
+	{
+		t arr2[length];
+		for (int i = 0; i < length; i++)
+		{
+			arr2[i] = arr[length-i-1];
+		}
+		copy(arr2, arr2+length, arr);
+	}
+
+	
 }
