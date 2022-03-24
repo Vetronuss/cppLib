@@ -76,7 +76,7 @@ output: {1,5,2}
 `cout << clamp(4.5,4,5);` Output: 4.5
 ### reverse(array,lenght)
 - reverses an array
-```
+```cpp
 int arr[4] = {1,2,3,4};
 reverse(arr,4);
 print(arr,4);
