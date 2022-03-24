@@ -2,6 +2,7 @@
 - A library consisting of a bunch of functions
 - every function uses coop namespace `coop::function(1,2)`
 - to avoid having to retype `coop::` add `using namespace coop;` to the top of your main
+- repl.it source code: https://replit.com/@GeorgeLebor/Lib#lib.h
 #### to add: download and drag and drop the file into your project, then have `#include "lib.h"` in your main
 
 
