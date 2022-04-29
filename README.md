@@ -103,7 +103,7 @@ output: 100
 - returns true if the substr is present in the string
 ```cpp
 string str = "Hello, World!";
-cout << contrains(str,"World");
+cout << contains(str,"World");
 ```
 output: True
 ## Other
