@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <fstream>
 #include <iterator>
+
 using namespace std;
 namespace coop{
 
@@ -44,18 +45,7 @@ namespace coop{
 		return num * num;
 	}
 
-	///generate random double between min and max
-	///dec is decimal precision, default is 2 decimals
-	double randomD(int min, int max, int dec = 2)
-	{
-		static bool first = true;
-		if (first){
-			srand(time(NULL));
-			first = false;
-		}
-		int num = rand() % (int)(max*pow(10,dec)-min*pow(10,dec));
-		return (min*pow(10,dec)+num)/pow(10,dec);
-	}
+	
 	
 	int random(int min, int max) //range : [min, max]
 	{
@@ -67,6 +57,20 @@ namespace coop{
 	      first = false;
 	   }
 	   return min + rand() % (( max + 1 ) - min);
+	}
+
+	///generate random double between min and max
+	///dec is decimal precision, default is 2 decimals
+	double randomD(int min, int max, int dec = 2)
+	{
+		static bool first = true;
+		if (first){
+			srand(time(NULL));
+			first = false;
+		}
+		double num = (double)random(min,max-1);
+		num+=(double)random(0,pow(10,dec))/pow(10,dec);	
+		return num;
 	}
 	
 	string input(string &str)
@@ -244,6 +248,8 @@ namespace coop{
 		}
 		copy(arr2, arr2+length, arr);
 	}
+
+	
 
 	
 }
